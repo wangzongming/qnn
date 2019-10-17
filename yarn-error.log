@@ -1,0 +1,62 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\oldwang\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;D:\app\nvmw\nvmw;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Server 8.0\bin;"C:\Program Files\Java\jdk1.8.0_191\bin;C:\Program Files\Java\jdk1.8.0_191\jre\bin";C:\Program Files (x86)\Notepad++;C:\Program Files\TortoiseSVN\bin;D:\app\flutter\bin;D:\app\android-sdk-windows\platform-tools;D:\app\android-sdk-windows\tools;D:\app\apache-maven-3.6.0\bin\;C:\Program Files\Common Files\Autodesk Shared\;D:\app\aw\ourwaybi\oracle\instantclient_12_1\vc11;D:\app\aw\ourwaybi\oracle\instantclient_12_1;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Apache-Subversion-1.12.2\bin;C:\Users\oldwang\AppData\Local\Microsoft\WindowsApps;D:\app\Microsoft VS Code\bin;C:\Users\oldwang\AppData\Local\Programs\Microsoft VS Code\bin;D:\app\IntelliJ IDEA 2018.3.5\bin;C:\Users\oldwang\AppData\Local\atom\bin;C:\Users\oldwang\AppData\Roaming\npm;C:\Users\oldwang\AppData\Local\Microsoft\WindowsApps
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  10.16.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: connect ETIMEDOUT 104.16.27.35:443
+      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1106:14)
+
+npm manifest: 
+  {
+  	"name": "qnn",
+  	"displayName": "qnn",
+  	"description": "qnn-table、qnn-form。。。",
+  	"version": "0.0.1",
+  	"engines": {
+  		"vscode": "^1.39.0"
+  	},
+  	"categories": [
+  		"Other"
+  	],
+  	"activationEvents": [
+  		"onCommand:extension.helloWorld"
+  	],
+  	"main": "./extension.js",
+  	"contributes": {
+  		"commands": [{
+              "command": "extension.helloWorld",
+  			"title": "Hello World"
+  		}]
+  	},
+  	"scripts": {
+  		"test": "node ./test/runTest.js"
+  	},
+  	"devDependencies": {
+  		"@types/glob": "^7.1.1",
+  		"@types/mocha": "^5.2.6",
+  		"@types/node": "^10.12.21",
+  		"@types/vscode": "^1.39.0",
+  		"eslint": "^5.13.0",
+  		"glob": "^7.1.4",
+  		"mocha": "^6.1.4",
+  		"typescript": "^3.3.1",
+  		"vscode-test": "^1.2.0"
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
