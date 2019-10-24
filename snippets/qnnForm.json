@@ -1,0 +1,877 @@
+{
+    "QnnForm页面代码结构生成": {
+        "prefix": [
+            "rq",
+            "rqf",
+            "reactQnnForm"
+        ],
+        "body": [
+            "import React,{ Component } from 'react';",
+            "import { Form } from 'antd';",
+            "import QnnForm from 'apih5/modules/qnn-table/qnn-form';",
+            "class Page extends Component {",
+            "\trender() {",
+            "\t\treturn (",
+            "\t\t\t<div style={{height:'100%'}}>",
+            "\t\t\t\t<QnnForm",
+            "\t\t\t\t\tform={this.props.form}",
+            "\t\t\t\t\thistory={this.props.history}",
+            "\t\t\t\t\tmatch={this.props.match}",
+            "\t\t\t\t\tfetch={this.props.myFetch}",
+            "\t\t\t\t\tupload={this.props.myUpload}",
+            "\t\t\t\t\theaders={{token: this.props.loginAndLogoutInfo.loginInfo.token}}",
+            "\t\t\t\t\twrappedComponentRef={(me) => {this.form = me}}",
+            "\t\t\t\t\tmethod={{ ${1}  }}",
+            "\t\t\t\t\tcomponentsKey={{}}",
+            "\t\t\t\t\tformConfig={[ ${2} ]}",
+            "\t\t\t\t/>",
+            "\t\t</div>)",
+            "\t}",
+            "}",
+            "export default Form.create()(Page);"
+        ],
+        "description": "qnnForm QnnForm页面代码结构生成"
+    },
+    "QnnForm组件代码结构生成": {
+        "prefix": [
+            "qnn",
+            "qf",
+            "qnnForm"
+        ],
+        "body": [
+            "<QnnForm",
+            "   form={this.props.form}",
+            "   history={this.props.history}",
+            "   match={this.props.match}",
+            "   fetch={this.props.myFetch}",
+            "   upload={this.props.myUpload}",
+            "   headers={{ token: this.props.loginAndLogoutInfo.loginInfo.token}}",
+            "   wrappedComponentRef={(me) => {this.form = me }}",
+            "   method={{${1}}}",
+            "   componentsKey={{${1}}}",
+            "   formConfig={[${2}]}",
+            "/>"
+        ],
+        "description": "qnnForm QnnForm页面代码结构生成"
+    },
+    "string": {
+        "prefix": [
+            "string",
+            "字符串"
+        ],
+        "body": [
+            "{",
+            "   type: 'string',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请输入',  ",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm string字段[文本类型]"
+    },
+    "number": {
+        "prefix": [
+            "number",
+            "数字"
+        ],
+        "body": [
+            "{",
+            "   type: 'number',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请输入',  ",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm number 字段[数字]"
+    },
+    "identity": {
+        "prefix": [
+            "identity",
+            "身份证"
+        ],
+        "body": [
+            "{",
+            "   type: 'identity',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请输入',  ",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm identity 字段[身份证]"
+    },
+    "money": {
+        "prefix": [
+            "money",
+            "人民币"
+        ],
+        "body": [
+            "{",
+            "   type: 'money',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请输入',  ",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm money 字段[人民币]"
+    },
+    "password": {
+        "prefix": [
+            "password",
+            "密码"
+        ],
+        "body": [
+            "{",
+            "   type: 'password',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请输入',  ",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm password 字段[密码]"
+    },
+    "phone": {
+        "prefix": [
+            "phone",
+            "电话",
+            "手机号"
+        ],
+        "body": [
+            "{",
+            "   type: 'phone',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请输入',  ",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm phone 字段[电话号码]"
+    },
+    "specialPlane": {
+        "prefix": [
+            "specialPlane",
+            "座机"
+        ],
+        "body": [
+            "{",
+            "   type: 'specialPlane',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请输入',  ",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm specialPlane 字段[座机号码]"
+    },
+    "integer": {
+        "prefix": [
+            "integer",
+            "整数"
+        ],
+        "body": [
+            "{",
+            "   type: 'integer',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请输入',  ",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm integer 字段[整数]"
+    },
+    "email": {
+        "prefix": [
+            "email",
+            "邮箱"
+        ],
+        "body": [
+            "{",
+            "   type: 'email',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请输入',  ",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm email 字段[邮箱]"
+    },
+    "url": {
+        "prefix": [
+            "url",
+            "网址"
+        ],
+        "body": [
+            "{",
+            "   type: 'url',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请输入',  ",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm url 字段[网址]"
+    },
+    "richtext": {
+        "prefix": [
+            "richtext",
+            "富文本"
+        ],
+        "body": [
+            "{",
+            "   type: 'richtext',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请输入',  ",
+            "   fetchConfig: { uploadUrl:window.configs.domain + 'upload' },  ",
+            "},${3}"
+        ],
+        "description": "qnnForm richtext 字段[富文本]"
+    },
+    "year": {
+        "prefix": [
+            "year",
+            "年"
+        ],
+        "body": [
+            "{",
+            "   type: 'year',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请选择',  ",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm year 字段[年YYYY]"
+    },
+    "date": {
+        "prefix": [
+            "date",
+            "日期",
+            "年月日"
+        ],
+        "body": [
+            "{",
+            "   type: 'date',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请选择',",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm date 字段[年月日 YYY-MM-DD]"
+    },
+    "time": {
+        "prefix": [
+            "time",
+            "时间"
+        ],
+        "body": [
+            "{",
+            "   type: 'time',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请选择',",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm time 字段[时间 HH:mm:ss]"
+    },
+    "datetime": {
+        "prefix": "datetime",
+        "body": [
+            "{",
+            "   type: 'datetime',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请选择',",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm datetime 字段[日期时间 YYYY-MM-DD HH:mm:ss]"
+    },
+    "month": {
+        "prefix": [
+            "month",
+            "月"
+        ],
+        "body": [
+            "{",
+            "   type: 'month',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请选择',",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm month 字段[月 YYYY-MM]"
+    },
+    "rangeDate": {
+        "prefix": [
+            "rangeDate",
+            "时间区域选择"
+        ],
+        "body": [
+            "{",
+            "   type: 'rangeDate',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请选择',",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm rangeDate 字段[时间区域选择]"
+    },
+    "component": {
+        "prefix": [
+            "component",
+            "Component",
+            "自定义组件"
+        ],
+        "body": [
+            "{",
+            "   type: 'component',",
+            "   field: '${1}', ",
+            "   Component: '${2}',",
+            "},${3}"
+        ],
+        "description": "qnnForm component 字段[自定义组件]"
+    },
+    "select": {
+        "prefix": [
+            "select",
+            "下拉选择"
+        ],
+        "body": [
+            "{",
+            "   type: 'select',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请选择',",
+            "   multiple: false, //是否开启多选功能 开启后自动开启搜索功能",
+            "   showSearch: false, //是否开启搜索功能 (移动端不建议开启)",
+            "   fetchConfig: {apiName:'${3}', otherParams:{}},",
+            "   //optionData: [],",
+            "   optionConfig: {label:'label', value:'value', linkageFields:{}},",
+            "   required: false, ",
+            "},${4}"
+        ],
+        "description": "qnnForm select 字段[普通下载选择]"
+    },
+    "selectByPaging": {
+        "prefix": [
+            "selectByPaging",
+            "下拉选择带分页"
+        ],
+        "body": [
+            "{",
+            "   type: 'selectByPaging',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请选择',  ",
+            "   fetchConfig: {apiName:'${3}', otherParams:{}, searchKey:''},",
+            "   optionConfig: {label:'label', value:'value', linkageFields:{}},",
+            "   pageConfig: {limit:20},",
+            "   required: false, ",
+            "},${4}"
+        ],
+        "description": "qnnForm selectByPaging 字段[下拉选择带分页]"
+    },
+    "cascader": {
+        "prefix": [
+            "cascader",
+            "联动",
+            "层叠联动"
+        ],
+        "body": [
+            "{",
+            "   type: 'cascader',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请选择',  ",
+            "   fetchConfig: {apiName:'${3}', otherParams:{}, searchKey:''},",
+            "   optionConfig: {label:'label', value:'value', linkageFields:{}},",
+            "   pageConfig: {limit:20},",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm cascader 字段[层叠联动]"
+    },
+    "treeSelect": {
+        "prefix": [
+            "treeSelect",
+            "树选择",
+            "拉人",
+            "oa拉人"
+        ],
+        "body": [
+            "{",
+            "   type: 'treeSelect',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   treeSelectOption: {",
+            "       //配置参照oa拉人组件配置",
+            "       fetchConfig: {apiName:'${3}', otherParams:{}},",
+            "   },  ",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm treeSelect 字段[树选择]"
+    },
+    "treeNode": {
+        "prefix": [
+            "treeNode",
+            "树节点"
+        ],
+        "body": [
+            "{",
+            "   type: 'treeNode',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   treeNodeOption: {",
+            "       //具体配置查看 tree 插件配置",
+            "       fetchConfig: {apiName:'${3}', otherParams:{}},",
+            "       //keys: {},",
+            "   },  ",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm treeSelect 字段[树选择]"
+    },
+    "textarea": {
+        "prefix": [
+            "textarea",
+            "多行文本"
+        ],
+        "body": [
+            "{",
+            "   type: 'textarea',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请输入',",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm textarea 字段[多行文本]"
+    },
+    "files": {
+        "prefix": [
+            "files",
+            "文件上传"
+        ],
+        "body": [
+            "{",
+            "   type: 'files',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   required: false, ",
+            "   fetchConfig: {apiName:window.configs.domain + 'upload'},",
+            "   max: 999,",
+            "},${3}"
+        ],
+        "description": "qnnForm textarea 字段[文件点击上传]"
+    },
+    "filesDragger": {
+        "prefix": [
+            "filesDragger",
+            "文件拖动上传"
+        ],
+        "body": [
+            "{",
+            "   type: 'filesDragger',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   desc: '点击或者拖动上传', ",
+            "   subdesc: '只支持单个上传', ",
+            "   required: false, ",
+            "   fetchConfig: {apiName:window.configs.domain + 'upload'},",
+            "   max: 999,",
+            "},${3}"
+        ],
+        "description": "qnnForm textarea 字段[文件拖动上传]"
+    },
+    "camera": {
+        "prefix": [
+            "camera",
+            "files",
+            "文件上传移动端"
+        ],
+        "body": [
+            "{",
+            "   type: 'camera',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   fieldName:${3}, //一定要配置唯一标识, ",
+            "   cameraConfig: {",
+            "       showName:  false, //显示文件名字  默认false",
+            "       type:'files', // (images | files | camera)",
+            "   },  ",
+            "   required: false, ",
+            "   fetchConfig: {apiName:window.configs.domain + 'upload'},",
+            "   max: 999,",
+            "},${4}"
+        ],
+        "description": "qnnForm camera 字段[文件上传移动端]"
+    },
+    "item": {
+        "prefix": [
+            "item",
+            "问题答案选项"
+        ],
+        "body": [
+            "{",
+            "   type: 'item',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm item 字段[问题答案选项]"
+    },
+    "radio": {
+        "prefix": [
+            "radio",
+            "单选"
+        ],
+        "body": [
+            "{",
+            "   type: 'radio',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   required: false, ",
+            "   optionData: [//可为function (props)=>array",
+            "       {label:'',value:''}",
+            "   ], ",
+            "},${3}"
+        ],
+        "description": "qnnForm radio 字段[单选]"
+    },
+    "checkbox": {
+        "prefix": [
+            "checkbox",
+            "多选"
+        ],
+        "body": [
+            "{",
+            "   type: 'checkbox',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   required: false, ",
+            "   optionData: [//可为function (props)=>array",
+            "       {label:'',value:''}",
+            "   ], ",
+            "},${3}"
+        ],
+        "description": "qnnForm checkbox 字段[多选]"
+    },
+    "switch": {
+        "prefix": [
+            "switch",
+            "开关"
+        ],
+        "body": [
+            "{",
+            "   type: 'switch',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm switch 字段[开关]"
+    },
+    "rate": {
+        "prefix": [
+            "rate",
+            "打分"
+        ],
+        "body": [
+            "{",
+            "   type: 'rate',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm rate 字段[打分]"
+    },
+    "slider": {
+        "prefix": [
+            "slider",
+            "滑块"
+        ],
+        "body": [
+            "{",
+            "   type: 'slider',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   required: false, ",
+            "   marks: { 0: 'A', 20: 'B', 40: 'C', 60: 'D', 80: 'E', 100: 'F'}, ",
+            "},${3}"
+        ],
+        "description": "qnnForm slider 字段[滑块]"
+    },
+    "linkage": {
+        "prefix": [
+            "linkage",
+            "无限联动",
+            "联动"
+        ],
+        "body": [
+            "{",
+            "   label: ${1},",
+            "   type: 'linkage',",
+            "   model:'0', // string  默认0  0所有数据都给到前端  1触焦时去请求数据",
+            "   optionConfig: {",
+            "       // 暂时只有模式为0有意义 所有子集默认optionConfig",
+            "       value: 'apih5FlowId',",
+            "       label: 'apih5FlowName',",
+            "       children: 'children'",
+            "   },",
+            "   children: {",
+            "       //所有配置见qnn-form",
+            "       isInTable: false,",
+            "       form: {",
+            "           editDisabled: true,",
+            "           label: '一级联动',",
+            "           field: 'linkage1',",
+            "           type: 'select',",
+            "           placeholder: '请选择'",
+            "               // fetchConfig: {//model为1时有用",
+            "               //     apiName: 'getFlowNameSelectList',",
+            "               //     parentKey:'XXX'",
+            "               // },",
+            "           },",
+            "           children: {",
+            "               form: {",
+            "               label: '二级联动',",
+            "               placeholder: '请选择',",
+            "               field: 'linkage2',",
+            "               type: 'select',",
+            "               optionData: [",
+            "                   {",
+            "                       apih5FlowId: '111',",
+            "                       apih5FlowName: '111'",
+            "                   }",
+            "               ]",
+            "           },",
+            "       }",
+            "   }",
+            "},${2}"
+        ],
+        "description": "qnnForm linkage 字段[无限联动]"
+    },
+    "qnnForm": {
+        "prefix": [
+            "qnnForm",
+            "表单块"
+        ],
+        "body": [
+            "{",
+            "   type: 'qnnForm,",
+            "   label: ${1},",
+            "   field: ${2},",
+            "   textObj: {",
+            "       add: '添加报销细明",
+            "       del: '删除',",
+            "   },",
+            "   anAddForm: false,",
+            "   qnnFormConfig: {",
+            "       //所有配置见qnn-form",
+            "       formConfig: []",
+            "   }",
+            "},${3}"
+        ],
+        "description": "qnnForm qnnForm 字段[表单块]"
+    },
+    "qnnTable": {
+        "prefix": [
+            "qnnForm",
+            "万能表格",
+            "表格"
+        ],
+        "body": [
+            "{",
+            "   type: 'qnnTable,",
+            "   label: ${1},",
+            "   field: ${2},",
+            "   qnnTableConfig: {",
+            "       //所有配置见qnn-form",
+            "       formConfig: []",
+            "       actionBtns: []",
+            "   }",
+            "},${3}"
+        ],
+        "description": "qnnForm qnnTable 字段"
+    },
+    "formItemLayout": {
+        "prefix": [
+            "布局",
+            "字段布局",
+            "formItemLayout"
+        ],
+        "body": [
+            "formItemLayout:{",
+            "   labelCol: {",
+            "       xs: { span: 24 },",
+            "       sm: { span: 4 }",
+            "   },",
+            "   wrapperCol: {",
+            "       xs: { span: 24 },",
+            "       sm: { span: 20 }",
+            "   }",
+            "},"
+        ],
+        "description": "qnnForm formItemLayout 布局"
+    },
+    "tailFormItemLayout": {
+        "prefix": [
+            "布局",
+            "按钮布局",
+            "formItemLayout",
+            "tailFormItemLayout"
+        ],
+        "body": [
+            "tailFormItemLayout:{",
+            "   labelCol: {",
+            "       xs: { span: 24 },",
+            "       sm: { span: 4 }",
+            "   },",
+            "   wrapperCol: {",
+            "       xs: { span: 24 },",
+            "       sm: { span: 20 }",
+            "   }",
+            "},"
+        ],
+        "description": "qnnForm tailFormItemLayout 按钮布局"
+    },
+    "formItemLayoutSearch": {
+        "prefix": [
+            "布局",
+            "搜索框布局",
+            "formItemLayout",
+            "formItemLayoutSearch"
+        ],
+        "body": [
+            "formItemLayoutSearch:{",
+            "   labelCol: {",
+            "       xs: { span: 24 },",
+            "       sm: { span: 4 }",
+            "   },",
+            "   wrapperCol: {",
+            "       xs: { span: 24 },",
+            "       sm: { span: 20 }",
+            "   }",
+            "},"
+        ],
+        "description": "qnnForm formItemLayoutSearch 搜索区域布局"
+    },
+    "fetchConfig": {
+        "prefix": [
+            "ajax请求",
+            "fetchConfig"
+        ],
+        "body": [
+            "fetchConfig:{",
+            "   apiName:'${1}',//可为function 返回必须为string",
+            "   params: {${2}},",
+            "   otherParams: {${3}},",
+            "},"
+        ],
+        "description": "fetchConfig ajax请求"
+    },
+    "btns": {
+        "prefix": [
+            "btns",
+            "按钮"
+        ],
+        "body": [
+            "btns:[",
+            "   {",
+            "       label: '提交',",
+            "       isValidate: true,//点击后是否验证表单 默认true",
+            "       icon: 'save',//icon",
+            "       type: 'primary', //primary dashed danger",
+            "       fetchConfig: {apiName:'',params:{}, delParams:[], otherParams:{}},",
+            "   },",
+            "],"
+        ],
+        "description": "qnnForm 按钮"
+    },
+    "condition": {
+        "prefix": [
+            "condition",
+            "按钮条件显隐配置",
+            "条件显隐"
+        ],
+        "body": [
+            "condition:[",
+            "   {",
+            "       regex: {age:12,},",
+            "       action: 'hide', //disabled, show, hide, function(){}",
+            "   },",
+            "],"
+        ],
+        "description": "qnnForm 按钮"
+    },
+    "diyRules": {
+        "prefix": [
+            "diyRules",
+            "自定义效验规则",
+            "效验规则"
+        ],
+        "body": [
+            "function (obj) {",
+            "   var required = obj.required;",
+            "   var message = obj.message;",
+            "   //validator也可写为回调  具体请看readme",
+            "      return [",
+            "           {",
+            "               required: required,",
+            "               message:message",
+            "           },",
+            "           //输入规则验证",
+            "           {",
+            "               pattern: new RegExp(/^(-)?(\\d{1,}\\.\\d{1,})(,)(-)?(\\d{1,}(\\.)\\d{1,})$/),",
+            "               message: '请输入正确的格式，如：116.430715,39.881501'",
+            "           }",
+            "       ]",
+            "},"
+        ],
+        "description": "qnnForm 自定义效验规则"
+    },
+    "optionConfig": {
+        "prefix": [
+            "optionConfig",
+            "下拉选项配置"
+        ],
+        "body": [
+            "optionConfig:{",
+            "   label: 'name', //默认 label",
+            "   value: ['id', 'orgId'],// [array | string]  最终的值使用逗号连接 默认值使用valueName 默认['value']",
+            "   //与其他字段双向绑定配置",
+            "   linkageFields:{",
+            "       linkageOne:'name',",
+            "       linkageTwo:'orgId',",
+            "   }",
+            "},"
+        ],
+        "description": "qnnForm 下拉选项配置"
+    },
+    "linkageFields": {
+        "prefix": [
+            "linkageFields",
+            "双向绑定",
+            "联动"
+        ],
+        "body": [
+            "linkageFields:{",
+            "    linkageOne:'name',",
+            "    linkageTwo:'orgId',",
+            "}"
+        ],
+        "description": "qnnForm 双向绑定"
+    }
+}

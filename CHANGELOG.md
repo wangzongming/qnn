@@ -1,9 +1,17 @@
 # Change Log
+ 
 
-All notable changes to the "qnn" extension will be documented in this file.
+## [0.0.5]
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+- 修复代码段问题 
 
-## [Unreleased]
+## [0.0.3]
 
-- Initial release
+- 新增按钮代码段和
+- 修改可中文
+- 新增一些其他
+
+
+### [0.0.2]
+
+- 正式发布第一版

@@ -1,13 +1,13 @@
 {
     "name": "qnn",
     "displayName": "qnn",
-    "description": "qnn-table、qnn-form。。。",
-    "version": "0.0.1",
+    "description": "qnn-table、qnn-form智能助手",
+    "version": "1.0.0",
     "engines": {
         "vscode": "^1.39.0"
     },
-    "repository":"https://github.com/qnn",
-    "publisher":"xm",
+    "repository": "https://github.com/qnn",
+    "publisher": "xm",
     "categories": [
         "Other"
     ],
@@ -16,17 +16,43 @@
         "onCommand:extension.helloWorld"
     ],
     "main": "./extension.js",
+    "icon":"q.png",
+    "galleryBanner": {
+        "color": "#C80000",
+        "theme": "dark"
+    },
     "contributes": {
         "commands": [
             {
-                "command": "extension.helloWorld",
-                "title": "Hello World"
+                "command": "extension.qnn",
+                "title": "hello"
             }
-        ]
+        ],
+        "snippets": [
+            {
+                "language": "javascript",
+                "path": "./snippets/qnnForm.json"
+            },
+            {
+                "language": "javascript",
+                "path": "./snippets/qnnTable.json"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "",
+            "properties": {
+                "qnn.disabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "markdownDescription": "是否启用qnn插件"
+                }
+            }
+        }
     },
     "scripts": {
         "test": "node ./test/runTest.js"
-    }, 
+    },
     "devDependencies": {
         "@types/glob": "^7.1.1",
         "@types/mocha": "^5.2.6",
@@ -37,5 +63,5 @@
         "mocha": "^6.1.4",
         "typescript": "^3.3.1",
         "vscode-test": "^1.2.0"
-    } 
+    }
 }

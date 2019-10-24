@@ -5,10 +5,7 @@ const vscode = require('vscode');
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 
-/**
- * 自动提示实现，这里模拟一个很简单的操作
- * 当输入 this.dependencies.xxx时自动把package.json中的依赖带出来
- * 当然这个例子没啥实际意义，仅仅是为了演示如何实现功能
+/** 
  * @param {*} document 
  * @param {*} position 
  * @param {*} token 
@@ -16,17 +13,29 @@ const vscode = require('vscode');
  */
 function provideCompletionItems(document,position,token,context) {
 
+    //普通提示
     const dependencies = [
         //a
         "antd",
         "actionBtns",
         "actionBtnsPosition",
+        "addonBefore",
+        "addonAfter",
+        "autosize",
+        "addends",
+        "addShow",
+        "addDisabled",
 
 
         //b
+        "btns",
+        "btnCallbackFn",
+
 
         //c
         "componentsKey",
+        "colWrapperStyle",
+        "colStyle",
 
         //d
         "drawerConfig",
@@ -35,24 +44,37 @@ function provideCompletionItems(document,position,token,context) {
         "data",
         "drawerConfig",
         "diyTableRow",
+        "defaultValue",
+        "diyRules",
+        "defaultSortOrder",
+        "drawerTitle",
+        "dataIndex",
+        "disabled",
 
 
         //e
+        "editDisabled",
+        "editShow",
 
         //f
         "form",
+        "fetch",
+        "field",
+        "filter",
+        "formatter",
         "formConfig",
         "fetchConfig",
         "firstRowIsSearch",
         "fieldsValueChange",
         "formFetchConfig",
         "formFetchConfig",
-        "formContainerLayoutLeftAndRright",
         "formContainerOnScroll",
         "formItemLayout",
         "formItemLayoutSearch",
         "formIsChangeedAlertModalType",
         "formIsChangeedAlertTextContent",
+        "fieldsConfig",
+        "formContainerLayoutLeftAndRright",
 
 
         //g
@@ -62,16 +84,23 @@ function provideCompletionItems(document,position,token,context) {
         //h
         "headers",
         "history",
+        "help",
 
         //i
-        "method",
-        "isNeedClassifyData",
-        "isNeedClassifyDataCb",
-        "isShowRowSelect",
         "infoAlert",
         "isInForm",
         "isInTable",
         "isInSearch",
+        "isUrlParams",
+        "initialValue",
+        "isCanClick",
+        "imgStyle",
+        "isInQnnTable",
+        "isNeedClassifyData",
+        "isNeedClassifyDataCb",
+        "isShowRowSelect",
+        "isValidate",
+        "moment",
 
         //g
         "getBackEndConfig",
@@ -79,48 +108,97 @@ function provideCompletionItems(document,position,token,context) {
         //k
 
         //l
+        "label",
         "layout",
         "limit",
         "curPage",
+        "labelStyle",
+        "labelClick",
         "labelConfig",
+        "linkageFields",
 
         //m
+        "max",
+        "min",
         "match",
         "myFetch",
         "method",
+        "message",
         "mobileListItem",
         "mobileItemClick",
         "maskClosable",
         "mobileModel",
+        "multiple",
 
 
         //n
+        "noHaveSearchInput",
 
         //o
+        "offse",
+        "oldValue",
+        'oldValueKey',
+        "offsetSearch",
+        "offsetForm",
+        "onChange",
+        "optionData",
+        "optionConfig",
 
         //p
         "paginationConfig",
+        "placeholder",
+        "prefix",
+        "prefixStyle",
+        "precision",
+        "pullJoin",
 
 
         //q
-        "QnnTable",
+        "qnnFormContextHeight",
 
         //r
         "rowKey",
+        "required",
+        "render",
+        "rowData",
+        "rowInfo",
+        "rows",
+
 
         //s
         "searchFormColNum",
+        "span",
+        "suffix",
+        "suffixStyle",
+        "sorter",
+        "spanForm",
+        "spanSearch",
+        "selectedRows",
+        "searchData",
+        "style",
+        "showSearch",
+
 
         //t
         "tabs",
         "title",
         "titleStyle",
         "table",
+        "typeMessage",
+        "tdEdit",
+        "tdEditCb",
+        "tdEditFetchConfig",
+        "tooltip",
+        "tableFns",
+        "type",
+        "tabsActiveKey",
 
 
         //u
+        "upload",
 
         //v
+        "voice",
 
         //w
         "wrappedComponentRef",
@@ -132,9 +210,37 @@ function provideCompletionItems(document,position,token,context) {
         //z
 
     ];
-    return dependencies.map(dep => {
+
+    //回调方法
+    const cbFn = [
+        "closeDrawer",
+        "download",
+        "fetch",
+        "msg",
+        "parentProps",
+        "setSelectedRows",
+        "clearSelectedRows",
+        "getSelectedRows",
+        "openTree",
+        "refresh",
+        "setActiveKey",
+        "getActiveKey",
+        "setFormGlobalDisabledStatus",
+        "setDrawerBtns",
+        "setDrawerBtnsByComponent",
+        "setForms",
+        "searchForm",
+        "setDrawerConfig",
+        "getDrawerConfig",
+        "deepCopy",
+    ];
+
+    return [].concat(dependencies,cbFn).map(dep => {
         // vscode.CompletionItemKind 表示提示的类型 
-        return new vscode.CompletionItem(dep,vscode.CompletionItemKind.Field); 
+        if (cbFn.includes(dep)) {
+            return new vscode.CompletionItem(dep,vscode.CompletionItemKind.Method);
+        }
+        return new vscode.CompletionItem(dep,vscode.CompletionItemKind.Field);
     });
 }
 
@@ -146,6 +252,8 @@ function provideCompletionItems(document,position,token,context) {
 function resolveCompletionItem(item,token) {
     return null;
 }
+
+
 
 
 
@@ -171,12 +279,41 @@ function activate(context) {
     context.subscriptions.push(disposable);
 
 
-    // 注册代码建议提示，只有当按下“.”时才触发
-    let foo = vscode.languages.registerCompletionItemProvider('javascript',{
+    let attr = vscode.languages.registerCompletionItemProvider('javascript',{
         provideCompletionItems,
         resolveCompletionItem
     });
-    context.subscriptions.push(foo);
+    context.subscriptions.push(attr);
+
+
+    //自定义 欢迎页面
+    context.subscriptions.push(vscode.commands.registerCommand('extension.demo.showWelcome',function (uri) {
+        const panel = vscode.window.createWebviewPanel(
+            'testWelcome', // viewType
+            "欢迎来到qnn", // 视图标题
+            vscode.ViewColumn.Two, // 显示在编辑器的哪个部位
+            {
+                enableScripts: true, // 启用JS，默认禁用
+            }
+        );
+        let global = { panel };
+        panel.webview.html = getWebViewContent(context,'README.md');
+        panel.webview.onDidReceiveMessage(message => {
+            if (messageHandler[message.cmd]) {
+                messageHandler[message.cmd](global,message);
+            } else {
+                util.showError(`未找到名为 ${message.cmd} 回调方法!`);
+            }
+        },undefined,context.subscriptions);
+    }));
+
+    const key = 'vscodePluginDemo.showTip';
+    // 如果设置里面开启了欢迎页显示，启动欢迎页
+    vscode.commands.executeCommand('extension.demo.showWelcome');
+    // if (vscode.workspace.getConfiguration().get(key)) {
+    //     vscode.commands.executeCommand('extension.demo.showWelcome');
+    // }
+
 
 }
 exports.activate = activate;
