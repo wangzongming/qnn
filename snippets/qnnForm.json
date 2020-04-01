@@ -7,20 +7,16 @@
         ],
         "body": [
             "import React,{ Component } from 'react';",
-            "import { Form } from 'antd';",
             "import QnnForm from 'apih5/modules/qnn-table/qnn-form';",
             "class Page extends Component {",
             "\trender() {",
             "\t\treturn (",
             "\t\t\t<div style={{height:'100%'}}>",
             "\t\t\t\t<QnnForm",
-            "\t\t\t\t\tform={this.props.form}",
-            "\t\t\t\t\thistory={this.props.history}",
-            "\t\t\t\t\tmatch={this.props.match}",
             "\t\t\t\t\tfetch={this.props.myFetch}",
             "\t\t\t\t\tupload={this.props.myUpload}",
             "\t\t\t\t\theaders={{token: this.props.loginAndLogoutInfo.loginInfo.token}}",
-            "\t\t\t\t\twrappedComponentRef={(me) => {this.form = me}}",
+            "\t\t\t\t\twrappedComponentRef={(me) => {this.qnnForm = me;this.form=me.form}}",
             "\t\t\t\t\tmethod={{ ${1}  }}",
             "\t\t\t\t\tcomponentsKey={{}}",
             "\t\t\t\t\tformConfig={[ ${2} ]}",
@@ -28,7 +24,7 @@
             "\t\t</div>)",
             "\t}",
             "}",
-            "export default Form.create()(Page);"
+            "export default Page;"
         ],
         "description": "qnnForm QnnForm页面代码结构生成"
     },
@@ -40,9 +36,6 @@
         ],
         "body": [
             "<QnnForm",
-            "   form={this.props.form}",
-            "   history={this.props.history}",
-            "   match={this.props.match}",
             "   fetch={this.props.myFetch}",
             "   upload={this.props.myUpload}",
             "   headers={{ token: this.props.loginAndLogoutInfo.loginInfo.token}}",
@@ -247,6 +240,22 @@
         ],
         "description": "qnnForm year 字段[年YYYY]"
     },
+    "week": {
+        "prefix": [
+            "date",
+            "周" 
+        ],
+        "body": [
+            "{",
+            "   type: 'week',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   placeholder: '请选择',",
+            "   required: false, ",
+            "},${3}"
+        ],
+        "description": "qnnForm week 周"
+    },
     "date": {
         "prefix": [
             "date",
@@ -321,6 +330,7 @@
             "   field: '${2}', ",
             "   placeholder: '请选择',",
             "   required: false, ",
+            "   picker: 'week', //week  month  year  time date",
             "},${3}"
         ],
         "description": "qnnForm rangeDate 字段[时间区域选择]"
@@ -613,56 +623,31 @@
         ],
         "description": "qnnForm slider 字段[滑块]"
     },
-    "linkage": {
+    "address": {
         "prefix": [
-            "linkage",
-            "无限联动",
-            "联动"
+            "address",
+            "定位",
+            "地址",
+            "详细地址",
+            "省",
+            "城市",
+            "区域",
+            "街道"
         ],
         "body": [
             "{",
-            "   label: ${1},",
-            "   type: 'linkage',",
-            "   model:'0', // string  默认0  0所有数据都给到前端  1触焦时去请求数据",
-            "   optionConfig: {",
-            "       // 暂时只有模式为0有意义 所有子集默认optionConfig",
-            "       value: 'apih5FlowId',",
-            "       label: 'apih5FlowName',",
-            "       children: 'children'",
-            "   },",
-            "   children: {",
-            "       //所有配置见qnn-form",
-            "       isInTable: false,",
-            "       form: {",
-            "           editDisabled: true,",
-            "           label: '一级联动',",
-            "           field: 'linkage1',",
-            "           type: 'select',",
-            "           placeholder: '请选择'",
-            "               // fetchConfig: {//model为1时有用",
-            "               //     apiName: 'getFlowNameSelectList',",
-            "               //     parentKey:'XXX'",
-            "               // },",
-            "           },",
-            "           children: {",
-            "               form: {",
-            "               label: '二级联动',",
-            "               placeholder: '请选择',",
-            "               field: 'linkage2',",
-            "               type: 'select',",
-            "               optionData: [",
-            "                   {",
-            "                       apih5FlowId: '111',",
-            "                       apih5FlowName: '111'",
-            "                   }",
-            "               ]",
-            "           },",
-            "       }",
-            "   }",
-            "},${2}"
+            "   type: 'string',",
+            "   label: '${1}',",
+            "   field: '${2}', ",
+            "   required: false, ", 
+            "   locInfo: 'address', // 详细地址address  省province  城市city  区域district  街道",
+            "},${3}"
         ],
-        "description": "qnnForm linkage 字段[无限联动]"
+        "description": "qnnForm slider 字段[滑块]"
     },
+    
+
+
     "qnnForm": {
         "prefix": [
             "qnnForm",
@@ -694,12 +679,12 @@
         ],
         "body": [
             "{",
-            "   type: 'qnnTable,",
-            "   label: ${1},",
-            "   field: ${2},",
+            "   type: 'qnnTable',",
+            "   label:'${1}',",
+            "   field: '${2}',",
             "   qnnTableConfig: {",
             "       //所有配置见qnn-form",
-            "       formConfig: []",
+            "       formConfig: [${3}],",
             "       actionBtns: []",
             "   }",
             "},${3}"
@@ -868,8 +853,7 @@
         ],
         "body": [
             "linkageFields:{",
-            "    linkageOne:'name',",
-            "    linkageTwo:'orgId',",
+            "    linkageOne:'name',", 
             "}"
         ],
         "description": "qnnForm 双向绑定"
